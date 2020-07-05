@@ -33,12 +33,12 @@ namespace Application.Activities
         {
             public CommandValidator()
             {
-                RuleFor(x => x.Title).MinimumLength(1);
-                RuleFor(x => x.Description).MinimumLength(1);
+                RuleFor(x => x.Title.Trim()).MinimumLength(1);
+                RuleFor(x => x.Description.Trim()).MinimumLength(1);
                 //RuleFor(x => x.Date).NotEmpty();
-                RuleFor(x => x.Category).MinimumLength(1);
-                RuleFor(x => x.City).MinimumLength(1);
-                RuleFor(x => x.Venue).MinimumLength(1);
+                RuleFor(x => x.Category.Trim()).MinimumLength(1);
+                RuleFor(x => x.City.Trim()).MinimumLength(1);
+                RuleFor(x => x.Venue.Trim()).MinimumLength(1);
             }
         }
 
