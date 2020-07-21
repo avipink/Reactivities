@@ -41,6 +41,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
     editActivity,
     submitting,
     loadActivity,
+    fillActivityFormValues
   } = activityStore;
 
   const [activity, setActivity] = useState(new ActivityFormValues());
@@ -51,7 +52,9 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
       setLoading(true);
       loadActivity(match.params.id)
         .then((activity) => {
-          setActivity(new ActivityFormValues(activity));
+          let newActivityFormValues = new ActivityFormValues();
+          fillActivityFormValues(newActivityFormValues,activity);
+          setActivity(newActivityFormValues);
         })
         .finally(() => setLoading(false));
     }
