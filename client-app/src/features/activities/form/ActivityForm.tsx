@@ -58,7 +58,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
         })
         .finally(() => setLoading(false));
     }
-  }, [loadActivity, match.params.id]);
+  }, [loadActivity, match.params.id,fillActivityFormValues]);
 
   const handleFinalFormSubmit = (values: any) => {
     const dateAndTime = combineDateAndTime(values.date, values.time);
